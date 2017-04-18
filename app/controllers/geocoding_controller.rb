@@ -9,12 +9,11 @@ class GeocodingController < ApplicationController
 
   def street_to_coords
     @street_address = params[:user_street_address]
-    @street_address_string = @street_address.to_s
     @street_address_no_space = @street_address.gsub(" ","+")
 
 
 
-    url = "https://maps.googleapis.com/maps/api/geocode/json?address="+"@street_address_no_space"
+    url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{@street_address_no_space}"
       # ==========================================================================
       # Your code goes below.
       #
